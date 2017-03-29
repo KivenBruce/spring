@@ -17,7 +17,7 @@ public interface SeckillDao {
 
 	/**
 	 * 根据id查询秒杀的商品信息
-	 * 
+	 * hzx
 	 * @param seckillId
 	 * @return
 	 */
