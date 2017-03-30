@@ -48,7 +48,7 @@
 			<interceptor name="superAdminAuthority"
 				class="com.phn.interceptor.SuperAdminInterceptor"></interceptor>
 		</interceptors>
-		<global-results>
+		<global-results><!-- 拦截器返回后跳转到login.jsp -->
 			<result name="login">/login.jsp</result>
 		</global-results>
 		<!-- 用户action -->
@@ -66,7 +66,7 @@
 			<result name="user_getNews_ok">/u/news.jsp</result>
 			<result name="user_updateInfo_ok">/u/updateInfo.jsp</result>
 			<result name="user_updatePass_ok">/u/updatePass.jsp</result>
-			<interceptor-ref name="userAuthority">
+			<interceptor-ref name="userAuthority"><!-- 调用拦截器方法,当使用param中的方法时候执行 -->
 				<param name="includeMethods">Logout,GoHome,GetTopics,GetComments,GetNews,UpdateInfo,UpdatePass</param>
 			</interceptor-ref>
 			<result name="user_manageAll_ok">/a/manageUsers.jsp</result>
@@ -81,7 +81,7 @@
 			</result>
 			<result name="user_manageUnDelete_ok" type="redirectAction">user_ManageAll
 			</result>
-			<interceptor-ref name="superAdminAuthority">
+			<interceptor-ref name="superAdminAuthority"><!-- 调用拦截器方法,当使用param中的方法时候执行 -->
 				<param name="includeMethods">ManageAll,ManageDelete,ManageUnDelete,ManageARole,ManageSRole</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack" />
