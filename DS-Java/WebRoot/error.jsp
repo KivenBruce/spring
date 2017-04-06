@@ -20,7 +20,12 @@
 <meta http-equiv="description" content="This is my page">
 <link rel="stylesheet" type="text/css" href="./CSS/top.css">
 <link rel="stylesheet" type="text/css" href="./CSS/copyRight.css">
-
+<script type="text/javascript">
+ 	var msg=""+'${request.tipMessage}'; 
+ 	if(msg!=""){ 
+   		alert(msg); 
+ 	} 
+</script>
 </head>
 
 <body>

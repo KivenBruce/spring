@@ -34,7 +34,7 @@
 			lazy="proxy">
 			<column name="users_grade_id" not-null="true"></column>
 		</many-to-one>
-		<!-- 一对多，一个用户有多个帖子     lazy = true 默认的延迟加载lazy=false立即加载 -->
+		<!-- 一对多，一个用户有多个帖子 -->
 		<set name="userTopics" lazy="true">
 			<key column="topics_user_id" foreign-key="id"></key>
 			<one-to-many class="com.phn.bean.Topics" />

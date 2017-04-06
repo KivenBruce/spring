@@ -15,8 +15,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 过滤所有的url,在web.xml中指定编码decode(utf-8),然后decode做比较
- * 
  * @author 潘海南
  * @email phnlove@163.com
  */
@@ -37,8 +35,8 @@ public class UploadFilter implements Filter {
 	}
 
 	@Override
-	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
-			throws IOException, ServletException {
+	public void doFilter(ServletRequest req, ServletResponse res,
+			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		String uri = request.getRequestURI();
 		String ch = URLDecoder.decode(uri, encode);

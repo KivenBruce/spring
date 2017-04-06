@@ -4,7 +4,6 @@
 	<constant name="struts.custom.i18n.resources" value="globalMessages" /><!-- 
 		指定国际化资源文件 -->
 	<constant name="struts.i18n.encoding" value="UTF-8" /><!-- 指定编码方式 -->
-	<!-- package中的name可以随便取名,namespace命名空间,访问路径会在项目名后加上namespace -->
 	<package name="json" namespace="/" extends="json-default,struts-default">
 		<interceptors>
 			<interceptor name="userAuthority" class="com.phn.interceptor.UserInterceptor"></interceptor>
@@ -49,7 +48,7 @@
 			<interceptor name="superAdminAuthority"
 				class="com.phn.interceptor.SuperAdminInterceptor"></interceptor>
 		</interceptors>
-		<global-results><!-- 拦截器返回后跳转到login.jsp -->
+		<global-results>
 			<result name="login">/login.jsp</result>
 		</global-results>
 		<!-- 用户action -->
@@ -67,7 +66,7 @@
 			<result name="user_getNews_ok">/u/news.jsp</result>
 			<result name="user_updateInfo_ok">/u/updateInfo.jsp</result>
 			<result name="user_updatePass_ok">/u/updatePass.jsp</result>
-			<interceptor-ref name="userAuthority"><!-- 调用拦截器方法,当使用param中的方法时候执行 -->
+			<interceptor-ref name="userAuthority">
 				<param name="includeMethods">Logout,GoHome,GetTopics,GetComments,GetNews,UpdateInfo,UpdatePass</param>
 			</interceptor-ref>
 			<result name="user_manageAll_ok">/a/manageUsers.jsp</result>
@@ -82,7 +81,7 @@
 			</result>
 			<result name="user_manageUnDelete_ok" type="redirectAction">user_ManageAll
 			</result>
-			<interceptor-ref name="superAdminAuthority"><!-- 调用拦截器方法,当使用param中的方法时候执行 -->
+			<interceptor-ref name="superAdminAuthority">
 				<param name="includeMethods">ManageAll,ManageDelete,ManageUnDelete,ManageARole,ManageSRole</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack" />
@@ -105,8 +104,7 @@
 			<result name="help_getIndex_ok">/indexHelp.jsp</result>
 			<result name="help_mangeAll_ok">/a/manageHelps.jsp</result>
 			<result name="help_manageGoUpdate_ok">/a/updateHelp.jsp</result>
-			<result name="help_manageUpdate_ok" type="redirectAction">help_ManageAll
-			</result>
+			<result name="help_manageUpdate_ok" type="redirectAction">help_ManageAll</result>
 			<result name="help_ManageAdd_ok" type="redirectAction">help_ManageAll</result>
 			<interceptor-ref name="adminAuthority">
 				<param name="includeMethods">ManageAll,ManageGoUpdate,ManageUpdate,ManageAdd</param>
