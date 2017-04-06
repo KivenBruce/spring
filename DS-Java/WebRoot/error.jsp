@@ -20,12 +20,7 @@
 <meta http-equiv="description" content="This is my page">
 <link rel="stylesheet" type="text/css" href="./CSS/top.css">
 <link rel="stylesheet" type="text/css" href="./CSS/copyRight.css">
-<script type="text/javascript">
- 	var msg=""+'${request.tipMessage}'; 
- 	if(msg!=""){ 
-   		alert(msg); 
- 	} 
-</script>
+
 </head>
 
 <body>
@@ -36,7 +31,7 @@
 		<div class="tbody"  style="min-height:400px;background-color: #F5F5F5 ">
 			<form name=loading>
 				<div style="height: 150px;width: 800px;"></div>
-					<font color="#0066ff">操作失败，正在返回，请稍等</font><font color="#0066ff"
+					<font color="#0066ff">操作失败，用户名或密码错误!正在返回，请稍等</font><font color="#0066ff"
 						face="Arial">...</font> <input type="text" name="chart"
 						style="font-weight:bolder;width: 304px; color:#CBCBCB; background-color:#EFEFEF; border-style:none;">
 
@@ -44,8 +39,8 @@
 						style="color:#0066ff; text-align:center; border-width:medium; border-style:none;">
 					<script type="text/javascript">
 						var bar = 0;
-						var line = "||";
-						var amount = "||";
+						var line = "#";
+						var amount = "#";
 						count();
 						function count() {
 							bar = bar + 2;
