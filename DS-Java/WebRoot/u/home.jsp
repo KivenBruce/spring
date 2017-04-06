@@ -3,8 +3,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
 
@@ -123,8 +122,8 @@
 	border: 0;
 }
 
-.leftBodyNav a:LINK,.leftBodyNav a:HOVER,.leftBodyNav a:ACTIVE,.leftBodyNav a:VISITED,.leftBodyNav a:FOCUS
-	{
+.leftBodyNav a:LINK, .leftBodyNav a:HOVER, .leftBodyNav a:ACTIVE,
+	.leftBodyNav a:VISITED, .leftBodyNav a:FOCUS {
 	text-decoration: none;
 }
 </style>
@@ -143,11 +142,11 @@
 	function test_item(n) {
 		var menu = document.getElementById("leftBodyNav");
 		var menuli = menu.getElementsByTagName("div");
-		for ( var i = 1; i <= menuli.length; i++) {
-			menuli[n - 1].className = "leftBodyNavDown";
-			menuli[i - 1].className = "leftBodyNavStyle";
-			document.getElementById("home").style.display = 'none';//隐藏
-			document.getElementById("content").style.display = 'block';//隐藏  
+		for (var i = 1; i <= menuli.length; i++) {
+			menuli[n - 1].className = "leftBodyNavDown";//点击选择后的样式
+			menuli[i - 1].className = "leftBodyNavStyle";//其余的样式
+			document.getElementById("home").style.display = 'none';//隐藏用户信息
+			document.getElementById("content").style.display = 'block';//显示点击的信息
 		}
 	};
 	function checkULogin() {
@@ -161,7 +160,6 @@
 		}
 		return true;
 	}
-	
 </script>
 </head>
 
@@ -177,7 +175,7 @@
 					<a href="index.jsp" title="论坛首页"><img
 						src="image/homepage_24.png"></img> </a>
 				</div>
-				<div style="float: left;line-height:24px;">
+				<div style="float: left; line-height: 24px;">
 					&nbsp;&gt;&nbsp;<a href="./index.jsp">论坛</a>&nbsp;&gt;&nbsp;个人中心
 				</div>
 			</div>
@@ -189,7 +187,7 @@
 							我的消息
 							<s:if test="#session.tu.clock==0"></s:if>
 							<s:else>
-								<sup style="color: red;font-size: 14px;"><s:property
+								<sup style="color: red; font-size: 14px;"><s:property
 										value="#session.tu.clock" /> </sup>
 							</s:else>
 						</div> </a> <a href="user_GetTopics.action" target="test1"
@@ -211,13 +209,14 @@
 				<div class="rightBody">
 					<div id="home" style="background-color: white;">
 						<div
-							style="float: left;background-color: white;width: 50px;max-height:450px;min-height: 420px;"></div>
+							style="float: left; background-color: white; width: 50px; max-height: 450px; min-height: 420px;"></div>
 						<div align="left"
-							style="float: left;background-color: white;width: 360px;max-height:450px;min-height: 420px;line-height: 28px;">
+							style="float: left; background-color: white; width: 360px; max-height: 450px; min-height: 420px; line-height: 28px;">
 							<p>
 								用户名： <font
-									style="font-size: 20px;line-height: 30px;color: #6699CC;font-weight: bolder;">
-									<s:property value="user.username" /> </font><br /> 昵称：
+									style="font-size: 20px; line-height: 30px; color: #6699CC; font-weight: bolder;">
+									<s:property value="user.username" />
+								</font><br /> 昵称：
 								<s:property value="user.nickname" />
 								<br />性别：
 								<s:property value="user.sex" />
@@ -242,14 +241,13 @@
 								&nbsp;&nbsp;&nbsp;&nbsp;我的评论数：
 								<s:property value="user.comCount" />
 								<br />注册时间：
-								<s:date name="user.registerTime"
-									format="yyyy-MM-dd hh:mm:ss" />
+								<s:date name="user.registerTime" format="yyyy-MM-dd hh:mm:ss" />
 						</div>
 						<div align="left"
-							style="float: left;background-color: white;width: 360px;min-height: 420px;max-height:450px">
+							style="float: left; background-color: white; width: 360px; min-height: 420px; max-height: 450px">
 							<p>
 								&nbsp;&nbsp;&nbsp;&nbsp;<img alt="我的头像"
-									style="width: 140px;height: 200px;"
+									style="width: 140px; height: 200px;"
 									src="<s:property value="user.picture" />">
 							<p>
 								个人简介：<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
